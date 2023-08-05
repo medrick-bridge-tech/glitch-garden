@@ -13,8 +13,8 @@ public class LevelManager : MonoBehaviour
     
         private void LoadLevel(string name)
         {
-            Debug.Log("load next level" + name);
-            SceneManager.LoadScene(name);
+             Debug.Log("load next level" + name);
+             SceneManager.LoadScene(name);
         }
         private void LoadNextLevel()
         {
