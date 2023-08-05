@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-     public float loadScreen;
+        [SerializeField] float loadScreen;
         void Start()
         {
             Invoke("LoadNextLevel", loadScreen);
         }
     
-        public void LoadLevel(string name)
+        private void LoadLevel(string name)
         {
             Debug.Log("load next level" + name);
-            Application.LoadLevel(name);
+            SceneManager.LoadScene(name);
         }
         private void LoadNextLevel()
         {
-            Application.LoadLevel(Application.loadedLevel + 1);
+            SceneManager.LoadScene(Application.loadedLevel + 1);
         }
 
 }
