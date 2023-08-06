@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,6 @@ public class LevelManager : MonoBehaviour
                 Invoke("LoadNextLevel", loadScreen);
             }
         }
-    
         public void LoadLevel(string name)
         {
              Debug.Log("load next level" + name);
@@ -28,4 +28,8 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(Application.loadedLevel + 1);
         }
 
+        
+        
+            
+        
 }
