@@ -8,10 +8,17 @@ public class LevelManager : MonoBehaviour
         [SerializeField] float loadScreen;
         void Start()
         {
-            Invoke("LoadNextLevel", loadScreen);
+            if (loadScreen == 0)
+            {
+                Debug.Log("auto load disable!");
+            }
+            else
+            {
+                Invoke("LoadNextLevel", loadScreen);
+            }
         }
     
-        private void LoadLevel(string name)
+        public void LoadLevel(string name)
         {
              Debug.Log("load next level" + name);
              SceneManager.LoadScene(name);
