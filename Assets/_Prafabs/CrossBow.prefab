@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1419778654404239454}
   - component: {fileID: 4211088835995016352}
   - component: {fileID: -2437892568736293597}
+  - component: {fileID: -6968110587716818780}
   - component: {fileID: 5084025663944195575}
   m_Layer: 0
   m_Name: CrossBow
@@ -153,6 +154,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6968110587716818780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291627544572558261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ba9218e902e77439681b30ded598f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starCost: 100
 --- !u!114 &5084025663944195575
 MonoBehaviour:
   m_ObjectHideFlags: 0

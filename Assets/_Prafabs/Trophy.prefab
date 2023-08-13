@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6088166546132711602}
   - component: {fileID: 6088166546132711601}
   - component: {fileID: 6088166546132711604}
+  - component: {fileID: 3370122095300778236}
   - component: {fileID: 6088166546132711603}
   - component: {fileID: -7892228911249614613}
   m_Layer: 0
@@ -81,6 +82,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98999214, y: 1.0122596}
   m_EdgeRadius: 0
+--- !u!114 &3370122095300778236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088166546132711600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ba9218e902e77439681b30ded598f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starCost: 100
 --- !u!50 &6088166546132711603
 Rigidbody2D:
   serializedVersion: 4
@@ -114,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cebb1f3cbf4b24eaab9c131a3ab5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
+  health: 0
 --- !u!1 &6088166547088729778
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +209,7 @@ SpriteRenderer:
   m_Size: {x: 0.546875, y: 0.296875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6088166547226497961

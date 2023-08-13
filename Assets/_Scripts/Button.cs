@@ -1,30 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
     public GameObject defenderPrefab;
+    public static GameObject selectedDefender;
     private Button[] buttonArray;
-    public static GameObject selectDefender;
-    void Start()
-    {
+    private Text costText;
+    void Start () {
         buttonArray = GameObject.FindObjectsOfType<Button>();
+		
+        costText = GetComponentInChildren<Text>();
+        if (!costText) {Debug.LogWarning (name + " has no cost ");}
+		
+        costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnMouseDown()
-    {
-        foreach (Button thisButton in buttonArray)
-        {
+    void OnMouseDown () {
+        foreach (Button thisButton in buttonArray) {
             thisButton.GetComponent<SpriteRenderer>().color = Color.black;
         }
+		
         GetComponent<SpriteRenderer>().color = Color.white;
-        selectDefender = defenderPrefab;
+        selectedDefender = defenderPrefab;
     }
 }
