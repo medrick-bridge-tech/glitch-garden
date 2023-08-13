@@ -25,7 +25,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if(_isMoving)
         {
-         
             MoveForward();
         }
     }
@@ -38,10 +37,8 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            _currentObject = other.gameObject;
             _anim.SetTrigger("isAttacking");
             _isMoving = false;
-            StrikeCurrentObjcet(10);
         }
     }
     
