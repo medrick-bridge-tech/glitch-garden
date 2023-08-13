@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class health : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public float Health;
+    public float health;
     public void dealDamge(float damage)
     {
-        Health -= damage;
-        if (Health <= 0 )
+        health -= damage;
+        if (health <= 0 )
         {
             DestroyObject();
         }

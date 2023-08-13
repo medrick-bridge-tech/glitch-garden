@@ -2,31 +2,32 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class enemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
-    [SerializeField] float _speed;
-    private Vector2 targetPosition = new Vector2(9, -2);
-    private Animator anim;
-    private bool isMoving = true;
-    private GameObject currentObject;
+    [SerializeField] float speed;
+    private Vector2 _targetPosition = new Vector2(9, -2);
+    private Animator _anim;
+    private bool _isMoving = true;
+    private GameObject _currentObject;
 
 
     void Start()
     {
-        targetPosition = new Vector2(transform.position.x * (-10), transform.position.y);
-        anim = GetComponent<Animator>();
+        _targetPosition = new Vector2(transform.position.x * (-10), transform.position.y);
+        _anim = GetComponent<Animator>();
     }
 
     
     void Update()
     {
-        if(isMoving)
+        if(_isMoving)
         {
+         
             MoveForward();
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,27 +38,27 @@ public class enemyMovement : MonoBehaviour
         }
         else
         {
-            currentObject = other.gameObject;
-            anim.SetTrigger("isAttacking");
-            isMoving = false;
+            _currentObject = other.gameObject;
+            _anim.SetTrigger("isAttacking");
+            _isMoving = false;
             StrikeCurrentObjcet(10);
         }
     }
     
     private void MoveForward()
     {
-        Vector2 newPostion = Vector2.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
+        Vector2 newPostion = Vector2.MoveTowards(transform.position, _targetPosition, speed * Time.deltaTime);
         transform.position = newPostion;
     }
 
     private void StrikeCurrentObjcet(float damage)
     {
-        if (currentObject)
+        if (_currentObject)
         {
-            health Health =  currentObject.GetComponent<health>();
-            if (Health)
+            Health health =  _currentObject.GetComponent<Health>();
+            if (health)
             {
-                Health.dealDamge(damage);
+                health.dealDamge(damage);
             }
         }
         
