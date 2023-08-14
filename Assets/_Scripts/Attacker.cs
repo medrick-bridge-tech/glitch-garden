@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class Attacker : MonoBehaviour
 {
-    public float _currentSpeed;
+    public float _currentSpeed, seenEverySecond;
     private GameObject _currentTarget;
     private Animator animator;
     private bool isMoving = true;

@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentSpeed: 1
+  seenEverySecond: 7
 --- !u!114 &-3568621823450077181
 MonoBehaviour:
   m_ObjectHideFlags: 0
