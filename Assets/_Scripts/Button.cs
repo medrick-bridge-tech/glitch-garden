@@ -6,22 +6,17 @@ using UnityEngine.UI;
 public class Button : MonoBehaviour
 {
     public GameObject defenderPrefab;
+    private Button[] _buttonArray;
     public static GameObject selectedDefender;
-    private Button[] buttonArray;
-    private Text costText;
-    void Start () {
-        buttonArray = GameObject.FindObjectsOfType<Button>();
-		
-        costText = GetComponentInChildren<Text>();
-        if (!costText) {Debug.LogWarning (name + " has no cost ");}
-		
-        costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
+    void Start () 
+    {
+        _buttonArray = GameObject.FindObjectsOfType<Button>();
     }
-    void OnMouseDown () {
-        foreach (Button thisButton in buttonArray) {
+    void OnMouseDown () 
+    {
+        foreach (Button thisButton in _buttonArray) {
             thisButton.GetComponent<SpriteRenderer>().color = Color.black;
         }
-		
         GetComponent<SpriteRenderer>().color = Color.white;
         selectedDefender = defenderPrefab;
     }
