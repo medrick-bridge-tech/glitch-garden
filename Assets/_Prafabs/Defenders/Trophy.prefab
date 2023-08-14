@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7892228911249614613}
   m_Layer: 0
   m_Name: Trophy
-  m_TagString: Defence
+  m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

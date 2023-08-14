@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5850256217642411282}
   m_Layer: 0
   m_Name: CrossBow
-  m_TagString: Untagged
+  m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

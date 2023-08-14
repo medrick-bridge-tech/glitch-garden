@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3568621823450077181}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Attaceker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1343838886531805644}
-  _speed: 1
+  speed: 10
 --- !u!61 &-8565027803561245898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cebb1f3cbf4b24eaab9c131a3ab5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
+  health: 500
