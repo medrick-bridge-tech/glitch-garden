@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        EnemyMovement enemy = collider.gameObject.GetComponent<EnemyMovement>();
+        Attacker enemy = collider.gameObject.GetComponent<Attacker>();
         Health health = collider.gameObject.GetComponent<Health>();
         if (enemy && health)
         {
