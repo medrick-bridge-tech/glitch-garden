@@ -20,8 +20,7 @@ public class Spawner : MonoBehaviour
 
     void Spawn(GameObject myGameObject)
     {
-        GameObject myAttacker = Instantiate(myGameObject) as GameObject;
-        myAttacker.transform.parent = transform;
+        GameObject myAttacker = Instantiate(myGameObject, transform, true) as GameObject;
         myAttacker.transform.position = transform.position;
     }
     bool isTimeToSpawn(GameObject attackerGameObject)
