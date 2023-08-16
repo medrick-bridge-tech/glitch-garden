@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3568621823450077181}
   - component: {fileID: 4600206170079198881}
   - component: {fileID: -8565027803561245898}
+  - component: {fileID: -1875023113004304038}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Attaceker
@@ -118,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ea9ecad84f7af458f9886e74ddc7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentSpeed: 1
+  _currentSpeed: 0.5
   seenEverySecond: 10.5
 --- !u!114 &-3568621823450077181
 MonoBehaviour:
@@ -171,3 +172,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.876503, y: 1.1113901}
   m_EdgeRadius: 0
+--- !u!50 &-1875023113004304038
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343838886531805644}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

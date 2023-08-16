@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ba9218e902e77439681b30ded598f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCost: 50
+  starCost: 10
 --- !u!50 &6088166546132711603
 Rigidbody2D:
   serializedVersion: 4

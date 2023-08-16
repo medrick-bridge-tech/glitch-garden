@@ -18,14 +18,17 @@ public class Attacker : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
-        {
-            transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
-        }
-
+        
+        
         if (!_currentTarget)
         {
+            transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
             animator.SetBool("isAttacking",false);
+        }
+        else
+        {
+            isMoving = false;
+            animator.SetBool("isAttacking", true);
         }
     }
     
