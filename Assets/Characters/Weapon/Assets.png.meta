@@ -147,7 +147,7 @@ TextureImporter:
       213: 182855423865772039
     second: Assets_47
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -168,6 +168,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -176,9 +177,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -206,6 +207,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -221,6 +223,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1252,6 +1266,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Assets_0: 2347532270071011419
+      Assets_1: 3052182395561689994
+      Assets_10: 1271722272082522542
+      Assets_11: -8320370864325541224
+      Assets_12: 3947119145969700431
+      Assets_13: 3015349953525394795
+      Assets_14: -1995460991893864797
+      Assets_15: 7517093957741376349
+      Assets_16: -3876643576250633040
+      Assets_17: -7850777724529354880
+      Assets_18: 7383687467945488379
+      Assets_19: 4235741550493736194
+      Assets_2: 7918522965169776436
+      Assets_20: -8398203410244654453
+      Assets_21: -5862563868047421946
+      Assets_22: 1695197506848084587
+      Assets_23: 5970421392418554270
+      Assets_24: 1577558282020170000
+      Assets_25: 709985767948143870
+      Assets_26: 8602224738383351024
+      Assets_27: -7869784530853970168
+      Assets_28: -5854084365824013164
+      Assets_29: 2187011968806798870
+      Assets_3: -7383382961532566217
+      Assets_30: 5472723881338367739
+      Assets_31: 735665211364075126
+      Assets_32: 1026387746927062752
+      Assets_33: 1701494416906896217
+      Assets_34: -4802324062440061089
+      Assets_35: -4841894824035428502
+      Assets_36: 1190716858151727721
+      Assets_37: -3267503948733962093
+      Assets_38: -8625990868242981319
+      Assets_39: -4984735839002111551
+      Assets_4: 5799697062963633374
+      Assets_40: 6679377024033702356
+      Assets_41: -6502899729928698641
+      Assets_42: 1038641356474281863
+      Assets_43: -5502007378267663662
+      Assets_44: -3169492810014657323
+      Assets_45: -6881576263296879089
+      Assets_46: -7266593204248964789
+      Assets_47: 182855423865772039
+      Assets_5: 6113260494978225853
+      Assets_6: 7040758548717563640
+      Assets_7: -465877756999394448
+      Assets_8: 5463075118845396717
+      Assets_9: -8042527737740088811
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
