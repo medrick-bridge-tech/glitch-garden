@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
         }
 
         float threshHold = spawnsPerSecond * Time.deltaTime;
-        if (Random.value < threshHold)
+        if (Random.value * 2f < threshHold)
         {
             return true;
         }
