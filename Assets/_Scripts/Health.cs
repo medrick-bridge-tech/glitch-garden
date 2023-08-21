@@ -21,6 +21,12 @@ public class Health : MonoBehaviour
         {
             accelerator.AccelerateAttacker();
         }
+
+        var duck = GetComponent<Duck>();
+        if (duck)
+        {
+            duck.DuckReaction();
+        }
     }
     
     private void DestroyObject()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Accelerator : MonoBehaviour
 {
+    [Range(1f, 2f)]
     [SerializeField] private float _speedMultiplier;
     [SerializeField] private float _speedLimit;
 
@@ -18,10 +19,10 @@ public class Accelerator : MonoBehaviour
         _health = GetComponent<Health>();
         _initalHealth = _health.health;
     }
-
+    
     public void AccelerateAttacker()
     {
-        if (_attacker._currentSpeed < _speedLimit)
+        if (_attacker._currentSpeed <= _speedLimit)
         {
             _attacker._currentSpeed += (_initalHealth / _health.health * _speedMultiplier);
         }

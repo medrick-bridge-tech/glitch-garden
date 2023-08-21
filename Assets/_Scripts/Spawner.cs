@@ -7,11 +7,13 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] attackerPrefabArray;
+    
+    
     void Update()
     {
         foreach (GameObject thisAttacker in attackerPrefabArray)
         {
-            if (isTimeToSpawn(thisAttacker))
+            if (IsTimeToSpawn(thisAttacker))
             {
                 Spawn(thisAttacker);
             }
@@ -23,7 +25,8 @@ public class Spawner : MonoBehaviour
         GameObject myAttacker = Instantiate(myGameObject, transform, true) as GameObject;
         myAttacker.transform.position = transform.position;
     }
-    bool isTimeToSpawn(GameObject attackerGameObject)
+    
+    bool IsTimeToSpawn(GameObject attackerGameObject)
     {
         Attacker attacker = attackerGameObject.GetComponent<Attacker>();
         float meanSpawnDelay = attacker.seenEverySecond;
