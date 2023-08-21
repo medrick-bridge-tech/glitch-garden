@@ -6,10 +6,14 @@ using UnityEngine.Serialization;
 
 public class Attacker : MonoBehaviour
 {
+    [SerializeField] private float _damage;
+    
     public float _currentSpeed, seenEverySecond;
+    
     private GameObject _currentTarget;
     private Animator animator;
-    private bool isMoving = true;
+    private float _timer = 0f;
+    
 
     private void Start()
     {
@@ -18,23 +22,26 @@ public class Attacker : MonoBehaviour
 
     void Update()
     {
-        
-        
-        if (!_currentTarget)
+        if (IsAttackingEnemy() == false)
         {
             transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
             animator.SetBool("isAttacking",false);
         }
         else
         {
-            isMoving = false;
-            animator.SetBool("isAttacking", true);
+            _timer += Time.deltaTime;
+            
+            if (_timer >= 0.3f)
+            {
+                StrikeCurrentTarget(_damage);
+                _timer = 0f;
+            }
         }
-    }
-    
-    public void SetSpeed(float speed)
-    {
-        _currentSpeed = speed;
+
+        bool IsAttackingEnemy()
+        {
+            return _currentTarget != null;
+        }
     }
 
     public void StrikeCurrentTarget(float damage)
@@ -42,7 +49,7 @@ public class Attacker : MonoBehaviour
         if (_currentTarget)
         {
             Health health = _currentTarget.GetComponent<Health>();
-            isMoving = false;
+            
             if (health)
             {
                 health.dealDamge(damage);
@@ -53,5 +60,18 @@ public class Attacker : MonoBehaviour
     public void Attack(GameObject obj)
     {
         _currentTarget = obj;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        GameObject obj = collider.gameObject;
+        
+        if (!obj.GetComponent<Defender>())
+        {
+            return;
+        }
+        
+        animator.SetBool("isAttacking", true);
+        Attack(obj);
     }
 }
