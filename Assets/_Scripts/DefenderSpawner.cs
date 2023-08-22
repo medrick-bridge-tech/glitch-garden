@@ -7,6 +7,8 @@ public class DefenderSpawner : MonoBehaviour
    public Camera myCamera;
    private GameObject _parent;
    private StarDispaly _starDispaly;
+   
+   
    private void Start()
    {
       _parent = GameObject.Find("Defender");
@@ -31,8 +33,6 @@ public class DefenderSpawner : MonoBehaviour
       {
          Debug.Log("Stars to spawn");
       }
-
-      
    }
 
    private void SpawnDefender(GameObject defender, Vector2 roundedPos)
@@ -47,6 +47,7 @@ public class DefenderSpawner : MonoBehaviour
       float newY = Mathf.RoundToInt(rawWorldPos.y)-0.5f;
       return new Vector2(newX, newY);
    }
+   
    Vector2 CalculateWorldPointOfMouseClick()
    {
       float mouseX = Input.mousePosition.x;
