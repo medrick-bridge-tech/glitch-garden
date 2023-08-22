@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4635994435145653646}
   - component: {fileID: 7105121323009003373}
   - component: {fileID: 1352973597403308714}
-  - component: {fileID: 3904127784028365831}
+  - component: {fileID: 7422650174884596479}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -170,7 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ea9ecad84f7af458f9886e74ddc7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentSpeed: 0.5
+  _damage: 20
+  _currentSpeed: 0.7
   seenEverySecond: 10.5
 --- !u!114 &1352973597403308714
 MonoBehaviour:
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
---- !u!114 &3904127784028365831
+--- !u!114 &7422650174884596479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2762134195198730120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 753bd4ea83181f345a6e237d415c8693, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bfbe639f1095f3448a4f02ca452a27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthFraction: 0.5
