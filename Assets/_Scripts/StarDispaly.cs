@@ -32,4 +32,9 @@ public class StarDispaly : MonoBehaviour
     private void UpdateDisplay () {
         starText.text =stars.ToString();
     }
+    
+    public bool HasEnoughStars(int defenderCost)
+    {
+        return stars >= defenderCost ? true : false;
+    }
 }
