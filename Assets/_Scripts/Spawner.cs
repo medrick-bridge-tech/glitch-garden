@@ -7,8 +7,17 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] attackerPrefabArray;
-    
-    
+
+    [SerializeField] private float _spawnRate;
+    private LevelController _levelController;
+
+    void Start()
+    {
+        _levelController = FindObjectOfType<LevelController>();
+        _spawnRate = _levelController.GetEnemySpawnRate();
+        
+        _spawnRate = 1 / _spawnRate;
+    }
     void Update()
     {
         foreach (GameObject thisAttacker in attackerPrefabArray)
@@ -37,7 +46,7 @@ public class Spawner : MonoBehaviour
         }
 
         float threshHold = spawnsPerSecond * Time.deltaTime;
-        if (Random.value * 2f < threshHold)
+        if (_spawnRate < threshHold)
         {
             return true;
         }
