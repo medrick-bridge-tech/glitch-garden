@@ -40,14 +40,14 @@ public class DefenderSpawner : MonoBehaviour
    {
       Vector2 rawPos = CalculateWorldPointOfMouseClick();
       Vector2 roundedPos = SnapToGrid(rawPos);
-      int defenderCost = _defender.GetComponent<Defender>().starCost;
-      if (_starDispaly.UseStars(defenderCost) == StarDispaly.Status.SUCCESS)
+      if (_defender)
       {
-         SpawnDefender(_defender, roundedPos);
-      }
-      else
-      {
-         Debug.Log("Stars to spawn");
+         int defenderCost = _defender.GetComponent<Defender>().starCost;
+         
+         if (_starDispaly.UseStars(defenderCost) == StarDispaly.Status.SUCCESS)
+         {
+            SpawnDefender(_defender, roundedPos);
+         }
       }
    }
 

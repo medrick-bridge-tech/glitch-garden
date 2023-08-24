@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public void dealDamge(float damage)
     {
         health -= damage;
+        
         if (health <= 0 )
         {
             DestroyObject();
@@ -31,6 +32,12 @@ public class Health : MonoBehaviour
     
     private void DestroyObject()
     {
+        var attacker = GetComponent<Attacker>();
+        if (attacker)
+        {
+            FindObjectOfType<GameManager>().AttackerDied();
+        }
+        
         Destroy(gameObject);
     }
 }

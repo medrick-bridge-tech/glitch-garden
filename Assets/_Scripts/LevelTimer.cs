@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class LevelTimer : MonoBehaviour
 {
+    public bool timerFinished;
+    
     private Slider _levelTimerSlider;
-    private bool _timerFinished;
     private LevelController _levelController;
 
 
@@ -22,6 +23,11 @@ public class LevelTimer : MonoBehaviour
     void Update()
     {
         _levelTimerSlider.value = Time.timeSinceLevelLoad;
-        _timerFinished = Time.timeSinceLevelLoad >= _levelController.GetLevelTime();
+        timerFinished = Time.timeSinceLevelLoad >= _levelController.GetLevelTime();
+
+        if (timerFinished)
+        {
+            FindObjectOfType<GameManager>().StopSpawners();
+        }
     }
 }

@@ -27,19 +27,19 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadCurrentScene()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(_currentSceneIndex);
     }
         
     public void LoadNextScene()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(_currentSceneIndex + 1);
     }
         
     public void LoadMainMenu()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Start Menu");
     }
 
