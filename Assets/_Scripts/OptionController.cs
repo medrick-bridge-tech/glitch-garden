@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class OptionController : MonoBehaviour
 {
     public Slider VolumeSlider;
-    public LevelManager levelManager;
+    public LevelLoader levelLoader;
     private MusicManager musicManager;
     
     void Start()

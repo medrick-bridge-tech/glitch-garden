@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     void Awake()
     {
         _levelController = FindObjectOfType<LevelController>();
-
+        
         _minSpawnDelay = _levelController.GetMinEnemySpawnDelay();
         _maxSpawnDelay = _levelController.GetMaxEnemySpawnDelay();
     }

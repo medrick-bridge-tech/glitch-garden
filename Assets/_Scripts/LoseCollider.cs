@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class LoseCollider : MonoBehaviour
 {
-    private LevelManager levelManager;
-    void Start()
-    {
-        levelManager = GameObject.FindObjectOfType<LevelManager>();
-    }
+    [SerializeField] GameObject _levelLostCanvas;
+    
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
-        levelManager.LoadLevel("loseScene");
+        Time.timeScale = 0f;
+        _levelLostCanvas.SetActive(true);
     }
 }
