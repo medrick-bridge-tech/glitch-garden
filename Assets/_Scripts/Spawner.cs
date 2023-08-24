@@ -6,54 +6,40 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] attackerPrefabArray;
-
-    [SerializeField] private float _spawnRate;
+    [SerializeField] Attacker[] _attackerPrefabArray;
+    [SerializeField] float _minSpawnDelay;
+    [SerializeField] float _maxSpawnDelay;
+    
     private LevelController _levelController;
+    private bool _spawn = true;
 
-    void Start()
+
+    void Awake()
     {
         _levelController = FindObjectOfType<LevelController>();
-        _spawnRate = _levelController.GetEnemySpawnRate();
-        
-        _spawnRate = 1 / _spawnRate;
-    }
-    void Update()
-    {
-        foreach (GameObject thisAttacker in attackerPrefabArray)
-        {
-            if (IsTimeToSpawn(thisAttacker))
-            {
-                Spawn(thisAttacker);
-            }
-        }
+
+        _minSpawnDelay = _levelController.GetMinEnemySpawnDelay();
+        _maxSpawnDelay = _levelController.GetMaxEnemySpawnDelay();
     }
 
-    void Spawn(GameObject myGameObject)
+    IEnumerator Start()
     {
-        GameObject myAttacker = Instantiate(myGameObject, transform, true) as GameObject;
-        myAttacker.transform.position = transform.position;
+        while (_spawn)
+        {
+            yield return new WaitForSeconds(Random.Range(_minSpawnDelay, _maxSpawnDelay));
+            var attackerIndex = Random.Range(0, _attackerPrefabArray.Length);
+            SpawnAttacker(_attackerPrefabArray[attackerIndex]);
+        }
     }
     
-    bool IsTimeToSpawn(GameObject attackerGameObject)
+    void SpawnAttacker(Attacker attacker)
     {
-        Attacker attacker = attackerGameObject.GetComponent<Attacker>();
-        float meanSpawnDelay = attacker.seenEverySecond;
-        float spawnsPerSecond = 1 / meanSpawnDelay;
-        if (Time.deltaTime > meanSpawnDelay)
-        {
-             Debug.Log("Spawn rate");
-        }
-
-        float threshHold = spawnsPerSecond * Time.deltaTime;
-        if (_spawnRate < threshHold)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        return true;
+        Attacker newAttacker = Instantiate(attacker, transform.position, transform.rotation);
+        newAttacker.transform.parent = transform;
+    }
+    
+    public void StopSpawning()
+    {
+        _spawn = false;
     }
 }

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   _levelTime: 0
-  _enemySpawnRate: 0
+  _minEnemySpawnDelay: 3
+  _maxEnemySpawnDelay: 7

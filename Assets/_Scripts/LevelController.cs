@@ -7,13 +7,18 @@ public class LevelController : MonoBehaviour
     [SerializeField] private LevelConfig _levelConfig;
 
     
-    public float GetEnemySpawnRate()
-    {
-        return _levelConfig.EnemySpawnRate;
-    }
-
     public float GetLevelTime()
     {
         return _levelConfig.LevelTime;
+    }
+    
+    public float GetMinEnemySpawnDelay()
+    {
+        return _levelConfig.MinEnemySpawnDelay;
+    }
+
+    public float GetMaxEnemySpawnDelay()
+    {
+        return _levelConfig.MaxEnemySpawnDelay;
     }
 }
