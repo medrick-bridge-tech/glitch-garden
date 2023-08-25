@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     
     private LevelController _levelController;
     private GameManager _gameManager;
-    private bool _spawn = true;
+    private bool _isTimeToSpawn = true;
 
 
     void Awake()
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Start()
     {
-        while (_spawn)
+        while (_isTimeToSpawn)
         {
             yield return new WaitForSeconds(Random.Range(_minSpawnDelay, _maxSpawnDelay));
             var attackerIndex = Random.Range(0, _attackerPrefabArray.Length);
@@ -36,14 +36,17 @@ public class Spawner : MonoBehaviour
     
     void SpawnAttacker(Attacker attacker)
     {
-        Attacker newAttacker = Instantiate(attacker, transform.position, transform.rotation);
-        newAttacker.transform.parent = transform;
+        if (_isTimeToSpawn)
+        {
+            Attacker newAttacker = Instantiate(attacker, transform.position, transform.rotation);
+            newAttacker.transform.parent = transform;
         
-        _gameManager.AttackerSpawned();
+            _gameManager.AttackerSpawned();
+        }
     }
     
     public void StopSpawning()
     {
-        _spawn = false;
+        _isTimeToSpawn = false;
     }
 }

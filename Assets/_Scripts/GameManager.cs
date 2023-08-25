@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int numOfLiveAttackers;
-    
     [SerializeField] private GameObject _levelCompleteCanvas;
     
     private LevelTimer _levelTimer;
+    private int _numOfLiveAttackers;
 
 
     void Start()
@@ -28,14 +27,14 @@ public class GameManager : MonoBehaviour
 
     public void AttackerSpawned()
     {
-        numOfLiveAttackers++;
+        _numOfLiveAttackers++;
     }
 
     public void AttackerDied()
     {
-        numOfLiveAttackers--;
+        _numOfLiveAttackers--;
 
-        if (_levelTimer.timerFinished && numOfLiveAttackers == 0)
+        if (_levelTimer.timerFinished && _numOfLiveAttackers == 0)
         {
             HandleWinCondition();
         }
