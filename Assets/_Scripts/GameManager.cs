@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _levelCompleteCanvas;
     
     private LevelTimer _levelTimer;
-    private int _numOfLiveAttackers;
+    public int _numOfLiveAttackers;
 
 
     void Start()

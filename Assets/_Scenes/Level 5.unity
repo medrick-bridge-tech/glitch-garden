@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291edda792f560f47b68167033c8201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelConfig: {fileID: 11400000, guid: ae2eb2fae23444a4383c5ef88ed15c9e, type: 2}
+  _levelConfig: {fileID: 11400000, guid: 4fddabbdfe7e6464abab1ddf420c5aae, type: 2}
 --- !u!4 &1950594286
 Transform:
   m_ObjectHideFlags: 0
@@ -2012,6 +2012,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8564812654570537082, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564812654570537082, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 8564812654917103290, guid: 1fcd0ccd9b31a6342959ff983190b16e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2022,6 +2032,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1950594287}
+    - target: {fileID: 8564812655002465086, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564812655891510756, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Winner winner!
+
+        Chicken dinner!'
+      objectReference: {fileID: 0}
     - target: {fileID: 8564812656035285088, guid: 1fcd0ccd9b31a6342959ff983190b16e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2135,7 +2157,7 @@ PrefabInstance:
     - target: {fileID: 8564812656035285092, guid: 1fcd0ccd9b31a6342959ff983190b16e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8564812656035285095, guid: 1fcd0ccd9b31a6342959ff983190b16e,
         type: 3}

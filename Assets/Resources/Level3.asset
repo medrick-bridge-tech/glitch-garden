@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f1237bb5fc18504a80d4c668e2158f1, type: 3}
-  m_Name: Level2
+  m_Name: Level3
   m_EditorClassIdentifier: 
-  _levelTime: 30.1
+  _levelTime: 45.1
   _minEnemySpawnDelay: 15
   _maxEnemySpawnDelay: 15
