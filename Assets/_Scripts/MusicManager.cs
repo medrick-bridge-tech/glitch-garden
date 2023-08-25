@@ -7,6 +7,8 @@ public class MusicManager : MonoBehaviour
 {
     [SerializeField] AudioClip[] levelMusicChange;
     private AudioSource audioSource;
+    
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -15,11 +17,12 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("Volume");
     }
 
     void OnLevelWasLoaded(int level)
     {
-        AudioClip thisLevelMusic = levelMusicChange[level];
+        AudioClip thisLevelMusic = levelMusicChange[level - 1];
         if (thisLevelMusic)
         {
             audioSource.clip = thisLevelMusic;
