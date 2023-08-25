@@ -60,7 +60,7 @@ public class DefenderSpawner : MonoBehaviour
    Vector2 SnapToGrid(Vector2 rawWorldPos)
    {
       float newX = Mathf.RoundToInt(rawWorldPos.x);
-      float newY = Mathf.RoundToInt(rawWorldPos.y)-0.5f;
+      float newY = Mathf.RoundToInt(rawWorldPos.y) - 0.5f;
       return new Vector2(newX, newY);
    }
    
@@ -68,9 +68,8 @@ public class DefenderSpawner : MonoBehaviour
    {
       float mouseX = Input.mousePosition.x;
       float mouseY = Input.mousePosition.y;
-      float distanceFromCamera = 10f;
 
-      Vector3 weirdTrplet = new Vector3(mouseX, mouseY, distanceFromCamera);
+      Vector2 weirdTrplet = new Vector3(mouseX, mouseY);
       Vector2 worldPos = myCamera.ScreenToWorldPoint(weirdTrplet);
       
       return worldPos;

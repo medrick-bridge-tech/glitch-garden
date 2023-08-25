@@ -9,7 +9,7 @@ public class StarDispaly : MonoBehaviour
     private int stars = 100;
     public enum Status {SUCCESS, FAILURE};
 
-    // Use this for initialization
+  
     void Start () {
         starText = GetComponent <Text>();
         UpdateDisplay();
@@ -30,7 +30,7 @@ public class StarDispaly : MonoBehaviour
     }
 	
     private void UpdateDisplay () {
-        starText.text =stars.ToString();
+        starText.text = stars.ToString();
     }
     
     public bool HasEnoughStars(int defenderCost)

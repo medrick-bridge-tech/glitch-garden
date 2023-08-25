@@ -1363,6 +1363,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950594287}
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadCurrentScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738371113184, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950594287}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731986738655971196, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2731986739301079361, guid: 00221212b29a6794c9b880e89b1b31b4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1473,6 +1543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Lost Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2731986739301079389, guid: 00221212b29a6794c9b880e89b1b31b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2731986739301079390, guid: 00221212b29a6794c9b880e89b1b31b4,
         type: 3}
       propertyPath: m_Camera
@@ -1505,7 +1580,7 @@ PrefabInstance:
     - target: {fileID: 2747909962365931638, guid: 24204505c6473f248814c8420f7db30d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -9.2
       objectReference: {fileID: 0}
     - target: {fileID: 2747909962365931638, guid: 24204505c6473f248814c8420f7db30d,
         type: 3}
@@ -1840,6 +1915,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8564812654917103290, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950594287}
+    - target: {fileID: 8564812655002465080, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1950594287}
     - target: {fileID: 8564812656035285088, guid: 1fcd0ccd9b31a6342959ff983190b16e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1949,6 +2034,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level Complete Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564812656035285092, guid: 1fcd0ccd9b31a6342959ff983190b16e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8564812656035285095, guid: 1fcd0ccd9b31a6342959ff983190b16e,
         type: 3}
