@@ -18,16 +18,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // var numOfGameManagers = FindObjectsOfType<GameManager>().Length;
-        // if (numOfGameManagers > 1)
-        // {
-        //     Destroy(gameObject);
-        // }
-        // else
-        // {
-        //     DontDestroyOnLoad(gameObject);
-        // }
-        
         _levelController = FindObjectOfType<LevelController>();
         
         _currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
