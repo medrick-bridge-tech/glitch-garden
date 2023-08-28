@@ -7,21 +7,30 @@ using UnityEngine.UI;
 
 public class OptionController : MonoBehaviour
 {
-    public Slider VolumeSlider;
-    public LevelManager levelManager;
-    private MusicManager musicManager;
+    [SerializeField] Slider _volumeSlider;
+    [SerializeField] Text _volumeSliderValueText;
     
+    private const float DEFAULT_VOLUME = 0.5f;
+
+
     void Start()
     {
-        musicManager = GameObject.FindObjectOfType<MusicManager>();
-        VolumeSlider.value = PlayerPrefsManager.GetMasterVolume();
+        _volumeSlider.value = PlayerPrefs.GetFloat("Volume");
+        _volumeSliderValueText.text = _volumeSlider.value.ToString("F2");
     }
     
-    public void SaveandExit()
+    public void ChangeMusicVolume()
     {
-        PlayerPrefsManager.SetMasterVolumeKey(VolumeSlider.value);
-        SceneManager.LoadScene("01 Start Menu");
+        var audioSource = FindObjectOfType<MusicManager>().GetComponent<AudioSource>();
+        audioSource.volume = _volumeSlider.value;
+        _volumeSliderValueText.text = _volumeSlider.value.ToString("F2");
+        PlayerPrefs.SetFloat("Volume", audioSource.volume);
     }
 
-    
+    public void SetDefaultValues()
+    {
+        _volumeSlider.value = DEFAULT_VOLUME;
+        _volumeSliderValueText.text = DEFAULT_VOLUME.ToString("F2");
+        PlayerPrefs.SetFloat("Volume", DEFAULT_VOLUME);
+    }
 }

@@ -6,45 +6,47 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] attackerPrefabArray;
+    [SerializeField] Attacker[] _attackerPrefabArray;
+    [SerializeField] float _minSpawnDelay;
+    [SerializeField] float _maxSpawnDelay;
     
-    
-    void Update()
+    private LevelController _levelController;
+    private GameManager _gameManager;
+    private bool _isTimeToSpawn = true;
+
+
+    void Awake()
     {
-        foreach (GameObject thisAttacker in attackerPrefabArray)
-        {
-            if (IsTimeToSpawn(thisAttacker))
-            {
-                Spawn(thisAttacker);
-            }
-        }
+        _gameManager = FindObjectOfType<GameManager>();
+        
+        _levelController = FindObjectOfType<LevelController>();
+        _minSpawnDelay = _levelController.GetMinEnemySpawnDelay();
+        _maxSpawnDelay = _levelController.GetMaxEnemySpawnDelay();
     }
 
-    void Spawn(GameObject myGameObject)
+    IEnumerator Start()
     {
-        GameObject myAttacker = Instantiate(myGameObject, transform, true) as GameObject;
-        myAttacker.transform.position = transform.position;
+        while (_isTimeToSpawn)
+        {
+            yield return new WaitForSeconds(Random.Range(_minSpawnDelay, _maxSpawnDelay));
+            var attackerIndex = Random.Range(0, _attackerPrefabArray.Length);
+            SpawnAttacker(_attackerPrefabArray[attackerIndex]);
+        }
     }
     
-    bool IsTimeToSpawn(GameObject attackerGameObject)
+    void SpawnAttacker(Attacker attacker)
     {
-        Attacker attacker = attackerGameObject.GetComponent<Attacker>();
-        float meanSpawnDelay = attacker.seenEverySecond;
-        float spawnsPerSecond = 1 / meanSpawnDelay;
-        if (Time.deltaTime > meanSpawnDelay)
+        if (_isTimeToSpawn)
         {
-             Debug.Log("Spawn rate");
+            Attacker newAttacker = Instantiate(attacker, transform.position, transform.rotation);
+            newAttacker.transform.parent = transform;
+        
+            _gameManager.AttackerSpawned();
         }
-
-        float threshHold = spawnsPerSecond * Time.deltaTime;
-        if (Random.value * 2f < threshHold)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        return true;
+    }
+    
+    public void StopSpawning()
+    {
+        _isTimeToSpawn = false;
     }
 }
