@@ -15,17 +15,14 @@ public class Spawner : MonoBehaviour
     private bool _isTimeToSpawn = true;
 
 
-    void Awake()
+    IEnumerator Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
         
         _levelController = FindObjectOfType<LevelController>();
         _minSpawnDelay = _levelController.GetMinEnemySpawnDelay();
         _maxSpawnDelay = _levelController.GetMaxEnemySpawnDelay();
-    }
-
-    IEnumerator Start()
-    {
+        
         while (_isTimeToSpawn)
         {
             yield return new WaitForSeconds(Random.Range(_minSpawnDelay, _maxSpawnDelay));

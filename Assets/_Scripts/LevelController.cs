@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] private LevelConfig _levelConfig;
+    public LevelConfig _levelConfig;
 
-    
+
     public float GetLevelTime()
     {
         return _levelConfig.LevelTime;
@@ -20,5 +21,10 @@ public class LevelController : MonoBehaviour
     public float GetMaxEnemySpawnDelay()
     {
         return _levelConfig.MaxEnemySpawnDelay;
+    }
+
+    public void SetLevelConfig(LevelConfig levelConfig)
+    {
+        _levelConfig = levelConfig;
     }
 }
