@@ -7,19 +7,19 @@ public class Defender : MonoBehaviour
 {
     [SerializeField] private int _starCost = 100;
 	
-    private StarDispaly _starDisplay;
+    private StarPresenter _starPresenter;
 
     public int StarCost => _starCost;
 
     
     void Start() 
     {
-        _starDisplay = GameObject.FindObjectOfType<StarDispaly>();
+        _starPresenter = GameObject.FindObjectOfType<StarPresenter>();
     }
     
     public void AddStars(int amount) 
     {
-        _starDisplay.AddStars(amount);
+        _starPresenter.AddStars(amount);
     }
 }
 

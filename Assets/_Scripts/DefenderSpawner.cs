@@ -10,14 +10,14 @@ public class DefenderSpawner : MonoBehaviour
    [SerializeField] private GameObject _notEnoughStarsText;
    
    private GameObject _parent;
-   private StarDispaly _starDispaly;
+   private StarPresenter _starPresenter;
    private Defender _selectedDefender;
 
 
    private void Start()
    {
       _parent = GameObject.Find("Defender");
-      _starDispaly = GameObject.FindObjectOfType<StarDispaly>();
+      _starPresenter = GameObject.FindObjectOfType<StarPresenter>();
       if (!_parent)
       {
          _parent = new GameObject("Defender");
@@ -28,7 +28,7 @@ public class DefenderSpawner : MonoBehaviour
    {
       if (_selectedDefender)
       {
-         if (_starDispaly.HasEnoughStars(_selectedDefender.StarCost))
+         if (_starPresenter.HasEnoughStars(_selectedDefender.StarCost))
          {
             _notEnoughStarsText.SetActive(false);
          }
@@ -47,7 +47,7 @@ public class DefenderSpawner : MonoBehaviour
       {
          int defenderCost = _selectedDefender.StarCost;
          
-         if (_starDispaly.UseStars(defenderCost) == StarDispaly.Status.SUCCESS)
+         if (_starPresenter.ConsumeStars(defenderCost) == StarPresenter.Status.SUCCESS)
          {
             SpawnDefender(_selectedDefender, roundedPos);
          }
