@@ -12,9 +12,8 @@ public class DefenderSpawner : MonoBehaviour
    private GameObject _parent;
    private StarDispaly _starDispaly;
    private Defender _selectedDefender;
-   
-   
-   
+
+
    private void Start()
    {
       _parent = GameObject.Find("Defender");
