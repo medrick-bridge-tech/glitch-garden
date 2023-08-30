@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         _numOfLiveAttackers--;
 
-        if (_levelTimer.timerFinished && _numOfLiveAttackers == 0)
+        if (_levelTimer.TimerFinished && _numOfLiveAttackers == 0)
         {
             HandleWinCondition();
         }
