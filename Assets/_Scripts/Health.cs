@@ -23,10 +23,10 @@ public class Health : MonoBehaviour
             attackerAccelerator.Accelerate();
         }
 
-        var duck = GetComponent<Duck>();
-        if (duck)
+        var attackerDodger = GetComponent<AttackerDodger>();
+        if (attackerDodger)
         {
-            duck.DuckReaction();
+            attackerDodger.Dodge();
         }
     }
     
