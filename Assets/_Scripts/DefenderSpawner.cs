@@ -25,7 +25,7 @@ public class DefenderSpawner : MonoBehaviour
    {
       if (_defender)
       {
-         if (_starDispaly.HasEnoughStars(_defender.starCost))
+         if (_starDispaly.HasEnoughStars(_defender.StarCost))
          {
             _notEnoughStarsText.SetActive(false);
          }
@@ -42,7 +42,7 @@ public class DefenderSpawner : MonoBehaviour
       Vector2 roundedPos = SnapToGrid(rawPos);
       if (_defender)
       {
-         int defenderCost = _defender.GetComponent<Defender>().starCost;
+         int defenderCost = _defender.StarCost;
          
          if (_starDispaly.UseStars(defenderCost) == StarDispaly.Status.SUCCESS)
          {

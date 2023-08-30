@@ -1,20 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Defender : MonoBehaviour
 {
-    public int starCost = 100;
+    [SerializeField] private int _starCost = 100;
 	
-    private StarDispaly starDisplay;
+    private StarDispaly _starDisplay;
 
-    void Start () {
-        starDisplay = GameObject.FindObjectOfType<StarDispaly>();
+    public int StarCost => _starCost;
+
+    
+    void Start() 
+    {
+        _starDisplay = GameObject.FindObjectOfType<StarDispaly>();
     }
-	
-    // Only being used as a tag for now!
-    public void AddStars (int amount) {
-        starDisplay.AddStars (amount);
+    
+    public void AddStars(int amount) 
+    {
+        _starDisplay.AddStars(amount);
     }
 }
 
