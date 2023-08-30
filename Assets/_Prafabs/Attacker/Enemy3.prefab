@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 30
+  _seenEverySecond: 10
   _currentSpeed: 1
-  seenEverySecond: 10.5
 --- !u!114 &7574741113891924058
 MonoBehaviour:
   m_ObjectHideFlags: 0

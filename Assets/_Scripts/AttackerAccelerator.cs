@@ -22,9 +22,9 @@ public class AttackerAccelerator : MonoBehaviour
     
     public void Accelerate()
     {
-        if (_attacker._currentSpeed <= _speedLimit)
+        if (_attacker.CurrentSpeed <= _speedLimit)
         {
-            _attacker._currentSpeed += (_initalHealth / _health.health * _speedMultiplier);
+            _attacker.CurrentSpeed += (_initalHealth / _health.health * _speedMultiplier);
         }
     }
 }

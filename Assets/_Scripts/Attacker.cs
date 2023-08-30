@@ -7,17 +7,22 @@ using UnityEngine.Serialization;
 public class Attacker : MonoBehaviour
 {
     [SerializeField] private float _damage;
-    
-    public float _currentSpeed, seenEverySecond;
+    [SerializeField] private float _currentSpeed;
     
     private GameObject _currentTarget;
-    private Animator animator;
+    private Animator _animator;
     private float _timer = 0f;
-    
+
+    public float CurrentSpeed
+    {
+        get => _currentSpeed;
+        set => _currentSpeed = value;
+    }
+
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -25,7 +30,7 @@ public class Attacker : MonoBehaviour
         if (IsAttackingEnemy() == false)
         {
             transform.Translate(Vector2.left * _currentSpeed * Time.deltaTime);
-            animator.SetBool("isAttacking",false);
+            _animator.SetBool("isAttacking",false);
         }
         else
         {
@@ -71,7 +76,7 @@ public class Attacker : MonoBehaviour
             return;
         }
         
-        animator.SetBool("isAttacking", true);
+        _animator.SetBool("isAttacking", true);
         Attack(obj);
     }
 }
