@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
-    public Defender defenderPrefab;
-    private Button[] _buttonArray;
+    private Defender _defenderPrefab;
+    private Button[] _buttons;
 
 
     void Start () 
     {
-        _buttonArray = GameObject.FindObjectsOfType<Button>();
+        _buttons = GameObject.FindObjectsOfType<Button>();
     }
 
     void OnMouseDown () 
     {
-        foreach (Button thisButton in _buttonArray)
+        foreach (Button button in _buttons)
         {
-            thisButton.GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f);
+            button.GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f);
         }
         GetComponent<SpriteRenderer>().color = Color.white;
-        FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
+        FindObjectOfType<DefenderSpawner>().SetSelectedDefender(_defenderPrefab);
     }
 }
