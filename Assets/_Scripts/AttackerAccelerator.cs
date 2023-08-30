@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Accelerator : MonoBehaviour
+public class AttackerAccelerator : MonoBehaviour
 {
     [Range(1f, 2f)]
     [SerializeField] private float _speedMultiplier;
@@ -20,7 +20,7 @@ public class Accelerator : MonoBehaviour
         _initalHealth = _health.health;
     }
     
-    public void AccelerateAttacker()
+    public void Accelerate()
     {
         if (_attacker._currentSpeed <= _speedLimit)
         {

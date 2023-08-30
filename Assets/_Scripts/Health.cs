@@ -17,10 +17,10 @@ public class Health : MonoBehaviour
             DestroyObject();
         }
 
-        var accelerator = GetComponent<Accelerator>();
-        if (accelerator)
+        var attackerAccelerator = GetComponent<AttackerAccelerator>();
+        if (attackerAccelerator)
         {
-            accelerator.AccelerateAttacker();
+            attackerAccelerator.Accelerate();
         }
 
         var duck = GetComponent<Duck>();
