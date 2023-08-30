@@ -2,13 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 public class DefenderSpawner : MonoBehaviour
 {
-   public Camera myCamera;
+   [SerializeField] Camera _myCamera;
+   [SerializeField] private GameObject _notEnoughStarsText;
+   
    private GameObject _parent;
    private StarDispaly _starDispaly;
-   private Defender _defender;
-   [SerializeField] private GameObject _notEnoughStarsText;
+   private Defender _selectedDefender;
+   
    
    
    private void Start()
@@ -23,9 +27,9 @@ public class DefenderSpawner : MonoBehaviour
    
    void Update()
    {
-      if (_defender)
+      if (_selectedDefender)
       {
-         if (_starDispaly.HasEnoughStars(_defender.StarCost))
+         if (_starDispaly.HasEnoughStars(_selectedDefender.StarCost))
          {
             _notEnoughStarsText.SetActive(false);
          }
@@ -40,13 +44,13 @@ public class DefenderSpawner : MonoBehaviour
    {
       Vector2 rawPos = CalculateWorldPointOfMouseClick();
       Vector2 roundedPos = SnapToGrid(rawPos);
-      if (_defender)
+      if (_selectedDefender)
       {
-         int defenderCost = _defender.StarCost;
+         int defenderCost = _selectedDefender.StarCost;
          
          if (_starDispaly.UseStars(defenderCost) == StarDispaly.Status.SUCCESS)
          {
-            SpawnDefender(_defender, roundedPos);
+            SpawnDefender(_selectedDefender, roundedPos);
          }
       }
    }
@@ -70,13 +74,13 @@ public class DefenderSpawner : MonoBehaviour
       float mouseY = Input.mousePosition.y;
 
       Vector2 weirdTrplet = new Vector3(mouseX, mouseY);
-      Vector2 worldPos = myCamera.ScreenToWorldPoint(weirdTrplet);
+      Vector2 worldPos = _myCamera.ScreenToWorldPoint(weirdTrplet);
       
       return worldPos;
    }
    
    public void SetSelectedDefender(Defender selectedDefender)
    {
-      _defender = selectedDefender;
+      _selectedDefender = selectedDefender;
    }
 }
