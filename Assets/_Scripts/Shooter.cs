@@ -6,11 +6,12 @@ using UnityEngine.Serialization;
 
 public class Shooter : MonoBehaviour
 {
-    public GameObject projectile;
-    public Transform spawn;
-    public void Fire()
-    { 
-        GameObject newProjectile = Instantiate(projectile, spawn.position, Quaternion.identity);
-    }
+    [FormerlySerializedAs("projectile")] [SerializeField] private GameObject _projectile;
+    [FormerlySerializedAs("spawn")] [SerializeField] private Transform _spawn;
     
+    
+    public void Shoot()
+    { 
+        GameObject newProjectile = Instantiate(_projectile, _spawn.position, Quaternion.identity);
+    }
 }
