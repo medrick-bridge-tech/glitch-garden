@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour
 
     public void StopSpawners()
     {
-        var spawners = FindObjectsOfType<Spawner>();
+        var attackerSpawners = FindObjectsOfType<AttackerSpawner>();
 
-        foreach (var spawner in spawners)
+        foreach (var attackerSpawner in attackerSpawners)
         {
-            spawner.StopSpawning();
+            attackerSpawner.StopSpawning();
         }
     }
 
