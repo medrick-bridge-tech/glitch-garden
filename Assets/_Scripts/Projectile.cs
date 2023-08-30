@@ -7,16 +7,12 @@ using UnityEngine.Serialization;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float speed , damage;
-    
+    [SerializeField] private float _speed;
+    [SerializeField] private float _damage;
+
     private void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
-    }
-    
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
+        transform.Translate(Vector2.right * _speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -25,7 +21,7 @@ public class Projectile : MonoBehaviour
         Health health = collider.gameObject.GetComponent<Health>();
         if (enemy && health)
         {
-            health.dealDamge(damage);
+            health.dealDamge(_damage);
             Destroy(gameObject);
         }
     }
