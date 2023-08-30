@@ -5,14 +5,16 @@ using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour
 {
-    public float health;
-    
-    
+    [SerializeField] private float _currentHealth;
+
+    public float CurrentHealth => _currentHealth;
+
+
     public void dealDamge(float damage)
     {
-        health -= damage;
+        _currentHealth -= damage;
         
-        if (health <= 0 )
+        if (_currentHealth <= 0 )
         {
             DestroyObject();
         }

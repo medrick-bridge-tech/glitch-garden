@@ -17,12 +17,12 @@ public class AttackerDodger : MonoBehaviour
     void Start()
     {
         _health = GetComponent<Health>();
-        _initalHealth = _health.health;
+        _initalHealth = _health.CurrentHealth;
     }
 
     public void Dodge()
     {
-        if (_health.health / _initalHealth <= _healthFraction)
+        if (_health.CurrentHealth / _initalHealth <= _healthFraction)
         {
             if (transform.position.y <= LOWEST_LANE_Y_POS)
             {

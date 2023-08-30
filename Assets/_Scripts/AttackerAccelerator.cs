@@ -17,14 +17,14 @@ public class AttackerAccelerator : MonoBehaviour
     {
         _attacker = GetComponent<Attacker>();
         _health = GetComponent<Health>();
-        _initalHealth = _health.health;
+        _initalHealth = _health.CurrentHealth;
     }
     
     public void Accelerate()
     {
         if (_attacker.CurrentSpeed <= _speedLimit)
         {
-            _attacker.CurrentSpeed += (_initalHealth / _health.health * _speedMultiplier);
+            _attacker.CurrentSpeed += (_initalHealth / _health.CurrentHealth * _speedMultiplier);
         }
     }
 }
