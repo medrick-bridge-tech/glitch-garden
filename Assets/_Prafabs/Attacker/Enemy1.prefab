@@ -124,7 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _currentSpeed: 0.3
-  seenEverySecond: 10.5
 --- !u!114 &-3568621823450077181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cebb1f3cbf4b24eaab9c131a3ab5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  _currentHealth: 200
 --- !u!61 &-8565027803561245898
 BoxCollider2D:
   m_ObjectHideFlags: 0

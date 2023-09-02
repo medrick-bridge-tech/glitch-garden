@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Spawner : MonoBehaviour
+public class AttackerSpawner : MonoBehaviour
 {
     [SerializeField] Attacker[] _attackerPrefabArray;
     [SerializeField] float _minSpawnDelay;
@@ -27,11 +27,11 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(_minSpawnDelay, _maxSpawnDelay));
             var attackerIndex = Random.Range(0, _attackerPrefabArray.Length);
-            SpawnAttacker(_attackerPrefabArray[attackerIndex]);
+            Spawn(_attackerPrefabArray[attackerIndex]);
         }
     }
     
-    void SpawnAttacker(Attacker attacker)
+    void Spawn(Attacker attacker)
     {
         if (_isTimeToSpawn)
         {

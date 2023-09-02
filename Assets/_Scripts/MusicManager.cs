@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] AudioClip[] levelMusicChange;
-    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] _differentLevelsAudioClips;
+    
+    private AudioSource _audioSource;
     
     
     private void Awake()
@@ -16,18 +18,18 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = PlayerPrefs.GetFloat("Volume");
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.volume = PlayerPrefs.GetFloat("Volume");
     }
 
     void OnLevelWasLoaded(int level)
     {
-        AudioClip thisLevelMusic = levelMusicChange[level - 1];
+        AudioClip thisLevelMusic = _differentLevelsAudioClips[level - 1];
         if (thisLevelMusic)
         {
-            audioSource.clip = thisLevelMusic;
-            audioSource.loop = true;
-            audioSource.Play();
+            _audioSource.clip = thisLevelMusic;
+            _audioSource.loop = true;
+            _audioSource.Play();
         }
     }
 }

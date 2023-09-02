@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text _levelText;
     
     private LevelTimer _levelTimer;
-    private int _numOfLiveAttackers;
+    private int _aliveAttackersCount;
     private LevelController _levelController;
     private int _currentLevel;
 
@@ -33,24 +33,24 @@ public class GameManager : MonoBehaviour
 
     public void StopSpawners()
     {
-        var spawners = FindObjectsOfType<Spawner>();
+        var attackerSpawners = FindObjectsOfType<AttackerSpawner>();
 
-        foreach (var spawner in spawners)
+        foreach (var attackerSpawner in attackerSpawners)
         {
-            spawner.StopSpawning();
+            attackerSpawner.StopSpawning();
         }
     }
 
     public void AttackerSpawned()
     {
-        _numOfLiveAttackers++;
+        _aliveAttackersCount++;
     }
 
     public void AttackerDied()
     {
-        _numOfLiveAttackers--;
+        _aliveAttackersCount--;
 
-        if (_levelTimer.timerFinished && _numOfLiveAttackers == 0)
+        if (_levelTimer.IsTimerFinished && _aliveAttackersCount == 0)
         {
             HandleWinCondition();
         }

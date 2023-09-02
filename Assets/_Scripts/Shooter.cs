@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -6,11 +7,21 @@ using UnityEngine.Serialization;
 
 public class Shooter : MonoBehaviour
 {
-    public GameObject projectile;
-    public Transform spawn;
-    public void Fire()
-    { 
-        GameObject newProjectile = Instantiate(projectile, spawn.position, Quaternion.identity);
+    [SerializeField] private GameObject _projectile;
+    [SerializeField] private Transform _spawn;
+
+
+    IEnumerator Start()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            Shoot();
+        }
     }
-    
+
+    public void Shoot()
+    { 
+        GameObject newProjectile = Instantiate(_projectile, _spawn.position, Quaternion.identity);
+    }
 }

@@ -2,29 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Accelerator : MonoBehaviour
+public class AttackerAccelerator : MonoBehaviour
 {
     [Range(1f, 2f)]
     [SerializeField] private float _speedMultiplier;
     [SerializeField] private float _speedLimit;
 
     private float _initalHealth;
-    private Health _health;
+    private DamageDealer _damageDealer;
     private Attacker _attacker;
 
 
     void Start()
     {
         _attacker = GetComponent<Attacker>();
-        _health = GetComponent<Health>();
-        _initalHealth = _health.health;
+        _damageDealer = GetComponent<DamageDealer>();
+        _initalHealth = _damageDealer.CurrentHealth;
     }
     
-    public void AccelerateAttacker()
+    public void Accelerate()
     {
-        if (_attacker._currentSpeed <= _speedLimit)
+        if (_attacker.CurrentSpeed <= _speedLimit)
         {
-            _attacker._currentSpeed += (_initalHealth / _health.health * _speedMultiplier);
+            _attacker.CurrentSpeed += (_initalHealth / _damageDealer.CurrentHealth * _speedMultiplier);
         }
     }
 }
