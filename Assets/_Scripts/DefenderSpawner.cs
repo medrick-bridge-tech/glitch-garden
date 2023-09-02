@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class DefenderSpawner : MonoBehaviour
 {
-   [SerializeField] Camera _myCamera;
+   [SerializeField] private Camera _myCamera;
    [SerializeField] private GameObject _notEnoughStarsText;
    
    private GameObject _parent;

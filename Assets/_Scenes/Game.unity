@@ -1315,6 +1315,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackGround
       objectReference: {fileID: 0}
+    - target: {fileID: 795334734849762323, guid: f4a7b33c439a8904ca7bc038f19385be,
+        type: 3}
+      propertyPath: _defenderPrefab
+      value: 
+      objectReference: {fileID: -6968110587716818780, guid: ed14356832d752b42b9a853fdc889066,
+        type: 3}
+    - target: {fileID: 795334734904147236, guid: f4a7b33c439a8904ca7bc038f19385be,
+        type: 3}
+      propertyPath: _defenderPrefab
+      value: 
+      objectReference: {fileID: 3370122095300778236, guid: 8e66c87b5a6725444abccccce2ffaed3,
+        type: 3}
+    - target: {fileID: 795334735582643989, guid: f4a7b33c439a8904ca7bc038f19385be,
+        type: 3}
+      propertyPath: _defenderPrefab
+      value: 
+      objectReference: {fileID: 1979100596321574720, guid: f7ddd890d26fa6e49b163f08f24c5d05,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a7b33c439a8904ca7bc038f19385be, type: 3}
 --- !u!1001 &1201281146878860932
@@ -1332,6 +1350,11 @@ PrefabInstance:
     - target: {fileID: 1201281146296669554, guid: 01dbc6568516f574189bcbdd91cecb79,
         type: 3}
       propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 567955432}
+    - target: {fileID: 1201281146296669554, guid: 01dbc6568516f574189bcbdd91cecb79,
+        type: 3}
+      propertyPath: _myCamera
       value: 
       objectReference: {fileID: 567955432}
     - target: {fileID: 1201281146296669554, guid: 01dbc6568516f574189bcbdd91cecb79,

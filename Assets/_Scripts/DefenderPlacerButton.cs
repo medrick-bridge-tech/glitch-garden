@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DefenderPlacerButton : MonoBehaviour
 {
-    private Defender _defenderPrefab;
+    [SerializeField] private Defender _defenderPrefab;
+    
     private DefenderPlacerButton[] _buttons;
 
 

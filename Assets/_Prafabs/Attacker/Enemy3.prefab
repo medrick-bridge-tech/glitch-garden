@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 30
-  _seenEverySecond: 10
   _currentSpeed: 1
 --- !u!114 &7574741113891924058
 MonoBehaviour:
@@ -185,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cebb1f3cbf4b24eaab9c131a3ab5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  _currentHealth: 300
 --- !u!114 &-2967306829468131849
 MonoBehaviour:
   m_ObjectHideFlags: 0

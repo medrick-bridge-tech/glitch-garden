@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ba9218e902e77439681b30ded598f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCost: 10
+  _starCost: 10
 --- !u!50 &6088166546132711603
 Rigidbody2D:
   serializedVersion: 4
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cebb1f3cbf4b24eaab9c131a3ab5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  _currentHealth: 200
 --- !u!1 &6088166547088729778
 GameObject:
   m_ObjectHideFlags: 0

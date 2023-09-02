@@ -72,9 +72,10 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: Fire
+    functionName: Shoot
     data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
+    objectReferenceParameter: {fileID: 1047131041817683534, guid: d29ab081a866c1b4d8e38a7f3011fd6c,
+      type: 3}
+    floatParameter: 50
+    intParameter: 10
     messageOptions: 0
