@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class fadeElement : MonoBehaviour
+public class FadeElement : MonoBehaviour
 {
     [SerializeField] float _fadeTime;
     

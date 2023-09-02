@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text _levelText;
     
     private LevelTimer _levelTimer;
-    private int _numOfLiveAttackers;
+    private int _aliveAttackersCount;
     private LevelController _levelController;
     private int _currentLevel;
 
@@ -43,14 +43,14 @@ public class GameManager : MonoBehaviour
 
     public void AttackerSpawned()
     {
-        _numOfLiveAttackers++;
+        _aliveAttackersCount++;
     }
 
     public void AttackerDied()
     {
-        _numOfLiveAttackers--;
+        _aliveAttackersCount--;
 
-        if (_levelTimer.TimerFinished && _numOfLiveAttackers == 0)
+        if (_levelTimer.IsTimerFinished && _aliveAttackersCount == 0)
         {
             HandleWinCondition();
         }

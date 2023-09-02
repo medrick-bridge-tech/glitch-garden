@@ -53,11 +53,11 @@ public class Attacker : MonoBehaviour
     {
         if (_currentTarget)
         {
-            Health health = _currentTarget.GetComponent<Health>();
+            DamageDealer damageDealer = _currentTarget.GetComponent<DamageDealer>();
             
-            if (health)
+            if (damageDealer)
             {
-                health.dealDamge(damage);
+                damageDealer.DealDamge(damage);
             }
         }
     }

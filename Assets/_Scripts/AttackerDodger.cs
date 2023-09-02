@@ -11,18 +11,18 @@ public class AttackerDodger : MonoBehaviour
     private const float VERTICAL_DISTANCE_BETWEEN_LANES = 1f;
 
     private float _initalHealth;
-    private Health _health;
+    private DamageDealer _damageDealer;
 
 
     void Start()
     {
-        _health = GetComponent<Health>();
-        _initalHealth = _health.CurrentHealth;
+        _damageDealer = GetComponent<DamageDealer>();
+        _initalHealth = _damageDealer.CurrentHealth;
     }
 
     public void Dodge()
     {
-        if (_health.CurrentHealth / _initalHealth <= _healthFraction)
+        if (_damageDealer.CurrentHealth / _initalHealth <= _healthFraction)
         {
             if (transform.position.y <= LOWEST_LANE_Y_POS)
             {

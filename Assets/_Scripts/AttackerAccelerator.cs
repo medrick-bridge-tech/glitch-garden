@@ -9,22 +9,22 @@ public class AttackerAccelerator : MonoBehaviour
     [SerializeField] private float _speedLimit;
 
     private float _initalHealth;
-    private Health _health;
+    private DamageDealer _damageDealer;
     private Attacker _attacker;
 
 
     void Start()
     {
         _attacker = GetComponent<Attacker>();
-        _health = GetComponent<Health>();
-        _initalHealth = _health.CurrentHealth;
+        _damageDealer = GetComponent<DamageDealer>();
+        _initalHealth = _damageDealer.CurrentHealth;
     }
     
     public void Accelerate()
     {
         if (_attacker.CurrentSpeed <= _speedLimit)
         {
-            _attacker.CurrentSpeed += (_initalHealth / _health.CurrentHealth * _speedMultiplier);
+            _attacker.CurrentSpeed += (_initalHealth / _damageDealer.CurrentHealth * _speedMultiplier);
         }
     }
 }

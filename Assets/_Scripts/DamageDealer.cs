@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Health : MonoBehaviour
+public class DamageDealer : MonoBehaviour
 {
     [SerializeField] private float _currentHealth;
 
     public float CurrentHealth => _currentHealth;
 
 
-    public void dealDamge(float damage)
+    public void DealDamge(float damage)
     {
         _currentHealth -= damage;
         
